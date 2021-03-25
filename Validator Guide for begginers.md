@@ -9,3 +9,19 @@ This guide is written for people that have absolutely no or little experience wi
 ## A complete step by step **Agoric Validator installation**
 ### Install Node.js
 Node.js is a JavaScript platform for general-purpose programming that allows users to build network applications quickly. By leveraging JavaScript on both the front and backend, Node.js makes development more consistent and integrated.
+```
+# Download the nodesource PPA for Node.js
+curl https://deb.nodesource.com/setup_12.x | sudo bash
+
+# Download the Yarn repository configuration
+# See instructions on https://legacy.yarnpkg.com/en/docs/install/
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+
+# Update Ubuntu
+sudo apt update && sudo apt upgrade -y
+
+# Install Node.js, Yarn, and build tools
+# Install jq for formatting of JSON data
+sudo apt install nodejs=12.* yarn build-essential jq -y
+```
